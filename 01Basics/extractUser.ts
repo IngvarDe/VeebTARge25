@@ -4,3 +4,6 @@ type Role = "admin" | "user" | "moderator"
 type V = Extract<Role, "admin" | "moderator">
 
 type OtherRole = "testing" | "admin" | "user" | "security"
+
+//niimoodi saab kaks type omavahel kokku panna
+type X = Extract<Role, OtherRole>

@@ -3,4 +3,6 @@ type RoleExclude = "admin" | "user" | "moderator"
 type ExcludeRole = "testing" | "admin" | "user" | "security"
 
 //võta mõlemast typest kokku ja välista teatud väärtused
-type O = Exclude<RoleExclude, "user" | "moderator">
+type O = Exclude<ExcludeRole, "user" | "moderator">
+//otsite internetis, mis on ternary operator
+//condition ? exprIfTrue : exprIfFalse
