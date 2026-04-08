@@ -1,6 +1,6 @@
 type HangmanWordProps = {
-    guessedLetters: string[],
-    wordToGuess: string,
+    guessedLetters: string[]
+    wordToGuess: string
     reveal?: boolean
 }
 
@@ -8,7 +8,7 @@ type HangmanWordProps = {
 export function HangmanWord({guessedLetters , wordToGuess, reveal = false }: 
     HangmanWordProps) {
 
-        const word = "test"
+        //const word = "test"
         //guessedLetters = ["t", "e", "s"]
 
     return (

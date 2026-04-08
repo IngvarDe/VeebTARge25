@@ -1,10 +1,11 @@
 import style from "./Keyboard.module.css"
 
 const KEYS = [
-  ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
-  ["k", "l", "m", "n", "o", "p", "q", "r", "s"],
-  ["t", "u", "v", "w", "x", "y", "z"],
-];
+    "a", "b", "c", "d", "e", "f", "g",
+    "h", "i", "j", "k", "l", "m", "n",
+    "o", "p", "q", "r", "s", "t", "u",
+    "v", "w", "x", "y", "z"
+]
 
 type KeyboardProps = {
     //peale kaotust ei saaks nuppe vajutada
@@ -25,7 +26,7 @@ export function Keyboard({
             style={{ 
             display: "flex", 
             gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))", 
-            gap: ".5em" 
+            gap: ".5rem" 
         }}
     >
         {/* kontrollitakse sisestatud tähtesid */}
