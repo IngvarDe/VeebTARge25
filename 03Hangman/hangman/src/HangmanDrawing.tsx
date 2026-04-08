@@ -88,7 +88,7 @@ const LEFT_LEG = (
 
 const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
 
-//seda kohe alguses ei lisa: { numberOfGuesses } : HangmanDrawingProps
+
 
 type HangmanDrawingProps = {
     numberOfGuesses: number
