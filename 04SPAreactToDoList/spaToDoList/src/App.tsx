@@ -47,7 +47,7 @@ const addToDo = () => {
 
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>To-Do List</h1>
       {/* To-Do List UI goes here */}
       <div className="input-row">
