@@ -1,5 +1,5 @@
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Planets } from "../types/planets";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +7,7 @@ function PlanetsList() {
     const [planets, setPlanets] = useState<Planets[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
     const navigate = useNavigate();
 
     //loob ühenduse controlleriga, mille nimi on PlanetsController
@@ -16,14 +17,14 @@ function PlanetsList() {
                 setLoading(true);
                 setError(null);
 
-                const response = await fetch("/api/planets");
+                const response = await fetch("/api/Planets");
                 if (response.ok) {
                     const data = await response.json();
                     setPlanets(data);
                 }
             } catch (error) {
-                console.error("Fetch error: ", error);
-                setError(error.message || "Failed to fetch planets");
+                const message = error instanceof Error ? error.message : "Failed to load planets";
+                setError(message);
             } finally {
                 setLoading(false);
             }
