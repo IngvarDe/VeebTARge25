@@ -14,7 +14,6 @@ export default function PlanetsCreate() {
     const navigate = useNavigate();
 
     const [form, setForm] = useState<FormState>({
-        //id: "",
         name: "",
         description: "",
         type: "",
