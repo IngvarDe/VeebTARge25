@@ -1,17 +1,14 @@
-import {  } from 'react';
-import './App.css';
-import PlanetsList from './views/PlanetsList';
 import { Routes, Route, Navigate } from "react-router-dom"
+import PlanetsList from './views/PlanetsList';
 
 
 export default function App() {
     return (
-        <Routes>
-            <Route>
+            <Routes>
                 <Route path="/" element={<Navigate to="/planets" replace />} />
+
                 <Route path="/planets" element={<PlanetsList />} />
-            </Route>
-        </Routes>
+            </Routes>
     );
 }
 

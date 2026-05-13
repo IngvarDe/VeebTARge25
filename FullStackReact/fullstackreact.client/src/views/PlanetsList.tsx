@@ -3,7 +3,6 @@ import { useCallback, useEffect, useState } from "react";
 import type { Planets } from "../types/planets";
 //import { useNavigate } from "react-router-dom";
 
-
 function PlanetsList() {
     const [planets, setPlanets] = useState<Planets[]>([]);
     //const navigate = useNavigate();
