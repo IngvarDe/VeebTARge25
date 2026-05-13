@@ -10,31 +10,32 @@ function PlanetsList() {
     const navigate = useNavigate();
 
     //loob ühenduse controlleriga, mille nimi on PlanetsController
-    const fetchPlanets = useCallback(async () => {
-        try {
-            setLoading(true);
-            setError(null);
+    useEffect(() => {
+        const fetchPlanets = async () => {
+            try {
+                setLoading(true);
+                setError(null);
 
-            const response = await fetch("/api/planets");
-            if (response.ok) {
-                const data = await response.json();
-                setPlanets(data);
+                const response = await fetch("/api/planets");
+                if (response.ok) {
+                    const data = await response.json();
+                    setPlanets(data);
+                }
+            } catch (error) {
+                console.error("Fetch error: ", error);
+                setError(error.message || "Failed to fetch planets");
+            } finally {
+                setLoading(false);
             }
-        } catch (error) {
-            console.error("Fetch error: ", error);
-        }
+        };
+
+        fetchPlanets();
     }, []);
 
     const openCreate = () => {
         navigate("/planets/create");
     }
 
-    useEffect(() => {
-
-        (async () => {
-            await fetchPlanets();
-        })();
-    }, [fetchPlanets]);
 
     return (
         <div className="page-card">
