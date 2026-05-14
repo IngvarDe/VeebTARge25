@@ -93,8 +93,8 @@ export default function PlanetsDetail() {
                     </tr>
                 </tbody>
             </table>
-            <div>
-                <button>
+            <div style={{ marginTop: 12, display: "flex", gap: 12 }}>
+                <button type="button" className="success" onClick={() => navigate(-1)}>
                     Back
                 </button>
             </div>
