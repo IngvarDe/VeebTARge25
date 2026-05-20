@@ -41,7 +41,8 @@ namespace FullStackReact.Server.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] PlanetsCreateViewModel model)
         {
-            if (string.IsNullOrWhiteSpace(model.Name)) {
+            if (string.IsNullOrWhiteSpace(model.Name))
+            {
                 return BadRequest("Name is required");
             }
             // Continue with the rest of the creation logic
@@ -58,7 +59,7 @@ namespace FullStackReact.Server.Controllers
             _context.Planets.Add(planet);
             _context.SaveChanges();
 
-            return Ok(new 
+            return Ok(new
             {
                 planetsId = planet.PlanetsId,
                 name = planet.Name,
@@ -120,6 +121,24 @@ namespace FullStackReact.Server.Controllers
 
             //siin tagastad Ok, kuna update on edukas
             //võid ka tagastada updated planet objekti, kui soovid
+            return Ok();
+        }
+
+        // DELETE: api/planets/{id}
+        [HttpDelete("{planetsId:guid}")]
+        public IActionResult Delete(Guid planetsId)
+        {
+            //siin tuleb kontrollida, kas planet on olemas, kui ei ole, siis tagastada NotFound
+            var planet = _context.Planets.FirstOrDefault(x => x.PlanetsId == planetsId);
+            if (planet == null)
+            {
+                return NotFound();
+            }
+
+            //siin tuleb eemaldada planet objekti andmebaasist
+            _context.Planets.Remove(planet);
+            //siin salvestad muutused andmebaasi
+            _context.SaveChanges();
             return Ok();
         }
     }
