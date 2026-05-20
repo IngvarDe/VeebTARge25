@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom"
 import PlanetsList from './views/PlanetsList';
 import PlanetsCreate from './views/PlanetsCreate';
+import PlanetsDetail from './views/PlanetsDetail';
 
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
 
                 <Route path="/planets" element={<PlanetsList />} />
                 <Route path="/planets/create" element={<PlanetsCreate />} />
+                <Route path="/planets/:planetsId" element={<PlanetsDetail />} />
             </Routes>
     );
 }

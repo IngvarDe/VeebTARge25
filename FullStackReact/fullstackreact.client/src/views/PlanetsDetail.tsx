@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import type { Planets } from '../types/planets';
 
 export default function PlanetsDetail() {
-    const { id } = useParams<{ id: string }>();
+    const { planetsId } = useParams<{ planetsId: string }>();
     const navigate = useNavigate();
 
     const [planet, setPlanet] = useState<Planets | null>(null);
@@ -12,7 +12,7 @@ export default function PlanetsDetail() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!id) {
+        if (!planetsId) {
             setError("No planet ID provided");
             setLoading(false);
             return;
@@ -23,7 +23,7 @@ export default function PlanetsDetail() {
                 setLoading(true);
                 setError(null);
 
-                const response = await fetch(`/api/planets/${(encodeURIComponent(id))}`);
+                const response = await fetch(`/api/planets/${(encodeURIComponent(planetsId))}`);
                 if (!response.ok) {
                     throw new Error(`Failed to fetch planet (${response.status})`);
                 }
@@ -37,7 +37,7 @@ export default function PlanetsDetail() {
         };
 
         fetchPlanet();
-    }, [id]);
+    }, [planetsId]);
 
     if (loading) return <div style={{ padding: 20 }}>Loading...</div>
 
@@ -48,7 +48,6 @@ export default function PlanetsDetail() {
                 <p style={{ color: 'crimson' }}>Error: {error}</p>
 
                 <div style={{ display: "flex", gap: 12 }}>
-                    <button type="button" onClick={() => navigate(-1)}>Back</button>
                     <Link to="/planets">Back to list</Link>
                 </div>
             </div>
