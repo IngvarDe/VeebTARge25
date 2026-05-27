@@ -151,7 +151,7 @@ export default function PlanetsEdit() {
                     <button className="primary" type="submit" disabled={saving}>
                         {saving ? "Saving..." : "Save"}
                     </button>
-                    <button className="success" type="button" onClick={() => navigate(-1)} disabled={saving}>
+                    <button className="success" type="button" onClick={() => navigate("/planets")}>
                         Back
                     </button>
                 </div>
