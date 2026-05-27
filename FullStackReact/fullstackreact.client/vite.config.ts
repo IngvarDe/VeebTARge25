@@ -47,10 +47,10 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '^/planets': {
-                target,
-                secure: false
-            },
+            // '^/planets': {
+            //     target,
+            //     secure: false
+            // },
             //kui tahad backendiga suhelda, 
             //siis kõik requestid, mis algavad /api, suunatakse backendile
             '^/api': {

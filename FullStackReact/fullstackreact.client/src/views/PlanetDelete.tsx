@@ -4,7 +4,7 @@ import type { Planets } from "../types/planets";
 
 
 export default function PlanetsDelete() {
-    const { planetsId } = useParams<{ id: string }>();
+    const { planetsId } = useParams<{ planetsId: string }>();
     const navigate = useNavigate();
 
     const [planet, setPlanet] = useState<Planets | null>(null);
