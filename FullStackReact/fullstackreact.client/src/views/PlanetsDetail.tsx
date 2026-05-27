@@ -93,8 +93,8 @@ export default function PlanetsDetail() {
                 </tbody>
             </table>
             <div style={{ marginTop: 12, display: "flex", gap: 12 }}>
-                <button type="button" className="success" onClick={() => navigate(-1)}>
-                    Back
+                <button type="button" className="success" onClick={() => navigate("/planets")}>
+                    To List
                 </button>
             </div>
         </div>

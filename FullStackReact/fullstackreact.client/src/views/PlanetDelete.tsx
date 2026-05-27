@@ -61,12 +61,12 @@ export default function PlanetsDelete() {
 
     return (
         <div style={{ padding: 20, maxWidth: 520, margin: "0 auto" }}>
-            <h2>Delete School</h2>
+            <h2>Delete Planet</h2>
 
             {error && <p style={{ color: "crimson" }}>{error}</p>}
 
             {!planet ? (
-                <p>School not found</p>
+                <p>Planet not found</p>
             ) : (
                 <>
                     <p>Are you sure you want to delete:</p>
